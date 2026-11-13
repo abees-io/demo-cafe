@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #1a0f0a;
+  --color-cream: #f5ebe0;
+  --color-caramel: #c68b59;
+  --color-gold: #e3b778;
+
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-sans: 'Inter', 'DM Sans', sans-serif;
+}
+
+:root {
+  --espresso: #1a0f0a;
+  --cream: #f5ebe0;
+  --caramel: #c68b59;
+  --gold: #e3b778;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #1a0f0a;
+}
+
+body {
+  background-color: var(--espresso);
+  color: var(--cream);
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+::selection {
+  background: var(--caramel);
+  color: var(--espresso);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a0f0a; }
+::-webkit-scrollbar-thumb { background: #c68b59; border-radius: 3px; }
+
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
